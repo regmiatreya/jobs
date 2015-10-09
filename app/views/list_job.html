@@ -1,0 +1,31 @@
+<div>
+		{{error}}
+		<table  class="table table-striped">
+			<tr>
+		
+				
+				<th class="col-md-3">
+					<a href="#/list" ng-click="orderJobList('title')">Title</a>
+					<span class="sortorder" ng-show="orderCriteria === 'title'" ng-class="{reverse:reverseOption}"></span>
+				</th>
+				<th class="col-md-3">
+					<a href="#/list" ng-click="orderJobList('position')">Position</a>
+					<span class="sortorder" ng-show="orderCriteria === 'position'" ng-class="{reverse:reverseOption}"></span>
+				</th>
+				<th class="col-md-3">
+					<a href="#/list" ng-click="orderJobList('institution')">Institution</a>
+					<span class="sortorder" ng-show="orderCriteria === 'institution'" ng-class="{reverse:reverseOption}"></span>
+				</th>
+				<th class="col-md-3">
+					<a href="#/list" ng-click="orderJobList('start_date')">Posted On</a>
+					<span class="sortorder" ng-show="orderCriteria === 'start_date'" ng-class="{reverse:reverseOption}"></span>
+				</th>
+			</tr>
+			<tr ng-repeat = "job in jobList  | orderBy : orderCriteria : reverseOption">
+				<td><a class="text-success" href="#/list/{{job.jobid}}">{{job.title}}</a></td>
+				<td>{{job.position}}</td>
+				<td>{{job.institution}}</td>
+				<td>{{job.start_date}}</td>
+			</tr>
+		</table>
+	</div>
