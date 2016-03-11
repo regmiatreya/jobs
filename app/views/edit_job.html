@@ -6,61 +6,59 @@
 			<div class="form-group col-md-12">
 				<label class="col-md-1">Title</label>
 				<div class="col-md-10 title-margin">
-					<input type="text"  name="title" ng-model="jobInfo.title"  class="form-control" value="jobInfo.msg.title">
+					<input type="text"  name="title" ng-model="jobInfo.msg.title"  class="form-control">
 				</div>
 			</div>
-
 			<div class="form-group col-md-6">
 				<label class="col-md-3">Position</label>
-				<select ng-model="jobInfo.position" class=" col-md-6 form-control" style="width:67%; margin-left:16px;">
-					<option value="">-- Select a Position --</option>
-					<option ng-repeat ="position in Data.positionOptions" value="{{position.codes}}">{{position.names}}</option>
+				<select ng-model="jobInfo.msg.position" class=" col-md-6 form-control" style="width:67%; margin-left:16px;">
+					<option value="">-- Select a position --</option>
+					<option ng-repeat ="pos in position" value="{{pos.codes}}">{{pos.names}}</option>
 				</select>
 			</div>
-
 			<div class="form-group col-md-6">
 				<label class="col-md-3">Institution</label>
 				<div class="col-md-9">
-					<input type="text" ng-model="jobInfo.institution"  class="form-control" value="jobInfo.msg.institution">
+					<input type="text" ng-model="jobInfo.msg.institution"  class="form-control" >
 				</div>
 			</div>
 			<div class="form-group col-md-6">
 				<label class="col-md-3">Email</label>
 				<div class="col-md-9">
-					<input type="text" ng-model="jobInfo.email"  class="form-control margin-left" >
+					<input type="text" ng-model="jobInfo.msg.email"  class="form-control margin-left" >
 				</div>
 			</div>
 			<div class="form-group col-md-6">
 				<label class="col-md-3">Deadline</label>
 				<div class="col-md-9">
-					<input type="date" ng-model="jobInfo.end_date" class="form-control"  min="2000-01-01" max="2016-12-12" />
+					<input type="date" ng-model="jobInfo.msg.end_date" class="form-control"  min="2000-01-01" max="2016-12-12"  />
 				</div>
 			</div>
 			
 			<div class="form-group col-md-6">
 				<label class="col-md-3">Country</label>
-				<select ng-model="jobInfo.country" class="col-md-6 form-control" style="width:69%; margin-left:11px;">
+				<select ng-model="jobInfo.msg.country" class="col-md-6 form-control" style="width:69%; margin-left:11px;">
 					<option value="">-- Select a Country --</option>
-					<option ng-repeat="country in Data.countryOptions" value="{{country.code}}">{{country.name}}</option>
+					<option ng-repeat="count in country" value="{{count.country}}">{{count.name}}</option>
 			  	</select>
 			</div>
 			<div class="form-group col-md-6">
 				<label class="col-md-3">City</label>
 				<div class="col-md-9">
-					<input type="text" ng-model="jobInfo.city"  class="form-control" >
+					<input type="text" ng-model="jobInfo.msg.city"  class="form-control" >
 				</div>
 			</div>
 			
 			<div class="col-md-12 form-group">
 				<h4 class="text-center">Description</h4>
 				<div class="col-md-12">
-					<textarea type="text" rows="20" ng-model="jobInfo.description"  class="form-control" >{{jobInfo.description}}</textarea>
+					<textarea type="text" rows="20" ng-model="jobInfo.msg.description" class="form-control">{{jobInfo.description}}</textarea>
 				</div>
 			</div>
+			
 			<div class="text-center btn-div">
 				<input type="submit" class="btn btn-primary col-md-2 btn-div" value="POST">
 				<input type="button" class="btn btn-primary col-md-2 btn-div" value="PREVIEW">
-				<input type="button" class="btn btn-success col-md-2 btn-div" value="EDIT">
 			</div>
 		</form>
 	</div>

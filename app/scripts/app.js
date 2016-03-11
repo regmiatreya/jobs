@@ -12,12 +12,14 @@ var jobApp = angular.module('jobApp', ['ngRoute','jobControllers']);
         templateUrl: 'views/detail_job.html',
         controller: 'DetailController',
       })
+      .when('/edit/:jobid', {
+        templateUrl:'views/edit_job.html',
+        controller: 'EditController',
+      })
       .when('/create', {
         templateUrl: 'views/create_job.html',
         controller: 'CreateController',
-
       })
-			
       .otherwise({
         redirectTo: '/list'
       });

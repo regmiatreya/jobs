@@ -1,61 +1,36 @@
 <!doctype html>
 <html ng-app="jobApp">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-		<style type="text/css">
-  .sortorder:after {
-    content: '\25b2';
-  }
-  .sortorder.reverse:after {
-    content: '\25bc';
-  }
-	#wrapper{
-		min-height:100%;
-		position:relative;
-	}
-	.content{
-		padding-bottom:80px;
-		min-height:650px;
-	
-	}
-
-	.footer {
-		height:80px;
-		padding:20px 10px;
-		background:grey ;
-		color:#fff;
-} 
-			
-
-	
-</style>
-  </head>
-  <body>
-    <div id="wrapper">
+ 	<head>
+		<meta charset="utf-8">
+		<title>JOB</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="styles/jobs.css">
+  	</head>
+  	<body>
+    	<div id="wrapper">
 			<div class="content">
 				<div ng-include src="'header.html'"></div>
 					<div  ng-view>
-						</div>
+					</div>
 				</div><!---end of content id -->
 			<div ng-include src="'footer.html'"></div>
 		</div><!---end of wrapper id -->
+		<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 
-
-
-	<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<!-- <script src="//cdn.datatables.net/1.10.1/js/jquery.dataTables.js"></script> -->
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+			
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+		 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-resource.js"></script>
+		<!-- <script src="https://raw.githubusercontent.com/l-lin/angular-datatables/master/dist/angular-datatables.min.js"></script> -->
 		
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-resource.js"></script>
-	
-	<script src="scripts/app.js"></script>
-	<script src="scripts/controllers/controllers.js"></script>
-</body>
+		
+		<script src="scripts/app.js"></script>
+		<script src="scripts/controllers/controllers.js"></script>
+	</body>
 </html>
 

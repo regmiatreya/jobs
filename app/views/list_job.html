@@ -1,14 +1,12 @@
-<div>
+<div class="container">
 		{{error}}
-		<table  class="table table-striped">
+		<table  class="table table-striped" >
 			<tr>
-		
-				
-				<th class="col-md-3">
+				<th class="col-md-4">
 					<a href="#/list" ng-click="orderJobList('title')">Title</a>
 					<span class="sortorder" ng-show="orderCriteria === 'title'" ng-class="{reverse:reverseOption}"></span>
 				</th>
-				<th class="col-md-3">
+				<th class="col-md-2">
 					<a href="#/list" ng-click="orderJobList('position')">Position</a>
 					<span class="sortorder" ng-show="orderCriteria === 'position'" ng-class="{reverse:reverseOption}"></span>
 				</th>
@@ -16,16 +14,22 @@
 					<a href="#/list" ng-click="orderJobList('institution')">Institution</a>
 					<span class="sortorder" ng-show="orderCriteria === 'institution'" ng-class="{reverse:reverseOption}"></span>
 				</th>
-				<th class="col-md-3">
-					<a href="#/list" ng-click="orderJobList('start_date')">Posted On</a>
-					<span class="sortorder" ng-show="orderCriteria === 'start_date'" ng-class="{reverse:reverseOption}"></span>
+				<th class="col-md-2">
+					<a href="#/list" ng-click="orderJobList('country')">Country</a>
+					<span class="sortorder" ng-show="orderCriteria === 'country'" ng-class="{reverse:reverseOption}"></span>
+				</th>
+				<th class="col-md-4">
+					<a href="#/list" ng-click="orderJobList('end_date')">Deadline</a>
+					<span class="sortorder" ng-show="orderCriteria === 'end_date'" ng-class="{reverse:reverseOption}"></span>
 				</th>
 			</tr>
 			<tr ng-repeat = "job in jobList  | orderBy : orderCriteria : reverseOption">
 				<td><a class="text-success" href="#/list/{{job.jobid}}">{{job.title}}</a></td>
-				<td>{{job.position}}</td>
-				<td>{{job.institution}}</td>
-				<td>{{job.start_date}}</td>
+				<td>{{ Data.positionOptions[job.position].names;}}</td>
+				<td>{{ job.institution }}</td>
+				<td>{{ Data.countryOptions[job.country].name; }}</td>
+				<td>{{ job.end_date }}</td>
 			</tr>
 		</table>
 	</div>
+

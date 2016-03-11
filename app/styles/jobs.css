@@ -1,0 +1,36 @@
+#wrapper{
+	min-height:100%;
+	position:relative;
+}
+.sortorder:after {
+    content: '\25b2';
+}
+.sortorder.reverse:after {
+    content: '\25bc';
+}
+.content{
+	padding-bottom:80px;
+	min-height:650px;
+}
+.footer {
+	height:80px;
+	padding:20px 10px;
+	background:grey ;
+	color:#fff;
+}
+.title-margin{
+	margin-left:34px;
+}
+
+.btn-div{
+	margin-left:75px;
+}
+.h3{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.form-group textarea{
+	width:97%;
+	margin-top:20px;
+}
+
