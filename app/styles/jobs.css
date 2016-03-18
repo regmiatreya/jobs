@@ -1,7 +1,70 @@
-#wrapper{
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+h1,h2,h3,h4,h5,table{
+    font-family: 'Arvo', Georgia, Times, serif;
+}
+p{
+	font-size:15px !important;
+  	letter-spacing:.1em !important;	
+}
+label{
+	font-size:16px;
+    font-weight:400;
+    line-height:150%;
+  	letter-spacing:.1em !important;	
+}
+@media only screen and (min-width: 320px) and (max-width: 992px)  {
+	label{
+		font-size: 14px !important;
+	}
+}
+label .radio{
+	margin-right:5px !important;
+}
+.btn {
+	letter-spacing:.1em !important;	
+	line-height:135%;
+	font-size:16px;
+	font-weight:normal;
+	border-radius:5px;
+	color:white !important;
+}
+.btn-success{
+	 background:#088A68;
+	 border-color:#088A68;
+ }
+
+.btn-success:hover {
+	background:#0B6121;
+ 	border-color:#0B6121;	
+}
+li {
+	cursor:pointer;
+	font-size: 15px !important;
+	letter-spacing:.1em !important;	
+	
+}
+input{
+	color:black ! important;
+}
+/* Astrotalks header CSS file */
+/* this class floats the header portion to 100% of screen */
+.top-container{
+	width:100%;
+}
+#wrapper {
 	min-height:100%;
 	position:relative;
 }
+.content {
+	padding:0px;
+	padding-bottom:150px;
+}
+
 .sortorder:after {
     content: '\25b2';
 }
@@ -12,25 +75,45 @@
 	padding-bottom:80px;
 	min-height:650px;
 }
-.footer {
-	height:80px;
-	padding:20px 10px;
-	background:grey ;
-	color:#fff;
-}
+/** Others **/
+
 .title-margin{
 	margin-left:34px;
 }
 
 .btn-div{
-	margin-left:75px;
+	margin-left:38%;
 }
-.h3{
+.btn-div .right-space-btn{
+	margin-right:15px;
+}
+.main-title{
 	margin-top:20px;
 	margin-bottom:20px;
+	color:#B5410B;
 }
 .form-group textarea{
 	width:97%;
 	margin-top:20px;
 }
+.position-select{
+	width:67%; 
+	margin-left:16px;
+}
+.country-select{
+	width:69%; 
+	margin-left:11px;
+}
+.verticalspace{
+	margin-top:30px;
+	margin-bottom:30px;
+}
+.table-header a{
+	font-size:18px;
+	color:inherit;
+}
+.search-btn{
+	float:right;
+}
+
 

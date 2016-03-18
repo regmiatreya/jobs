@@ -1,0 +1,166 @@
+/* Astrotalks header CSS file */
+/* this class floats the header portion to 100% of screen */
+.top-container{
+	width:100%;
+}
+
+/*Menu bar*******************************************/
+.navbar, 
+.navbar-inner, 
+.nav,
+.navbar-inverse {
+	margin:0;	
+	padding:0;
+	border:none;
+	filter:none !important;
+	/*background:#585f69 !important;*/
+	background:#1F3043 !important;
+	-webkit-box-shadow:none;
+       -moz-box-shadow:none;
+            box-shadow:none;
+}
+
+.navbar-inner {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+.navbar .nav {
+	margin-right:0;
+}
+.navbar .nav > li { 
+	display:block; 
+	position:relative;
+}
+.navbar .nav > li { display:block;}
+.navbar .nav > li > a {
+	font-family:'Coustard';
+	font-size: 18px;
+	color: #fff !important;
+	letter-spacing:.07em !important;	
+	display:block;
+	text-shadow: none;
+	margin-left:5px;
+	padding:20px 20px 20px;
+    -webkit-transition:all 0.4s ease-in-out;
+    -moz-transition:all 0.4s ease-in-out;
+    -o-transition:all 0.4s ease-in-out;
+    transition:all 0.4s ease-in-out;
+}
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+	background:#405E83 !important;
+	/*background:#1F3043 !important;*/	
+  	color:#fff !important;
+  	letter-spacing:.07em !important;
+}
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:focus {
+  	color: #fff !important;	
+  	text-decoration: none;
+  	background-color: #72c02c !important;	
+  	-webkit-box-shadow: none;
+       -moz-box-shadow: none;
+          	box-shadow: none;
+}
+.navbar .nav > .active > a:hover {	
+	background: #72c02c !important;		
+  	color: #fff !important;
+  	letter-spacing:.07em !important;
+  	-webkit-box-shadow: none;
+       -moz-box-shadow: none;
+          	box-shadow: none;
+}
+.navbar .nav > li > a .caret {
+  border-top-color: #fff !important;	
+  border-bottom-color: #fff !important;
+  margin:12px 0 0 2px !important;
+}
+.dropdown-menu {
+	/*background:#585f69;*/
+	background:#1F3043 !important;	
+    border-radius: 0px;
+    margin-top: 1px;
+}
+
+.dropdown-menu a { 
+	font-size:14px; 
+	letter-spacing:.07em !important;
+	font-family: 'Coustard'; 
+	color:#fff !important; 
+	padding:8px 8px !important; 
+}
+
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus,
+.dropdown-submenu:hover > a {
+	color: #fff !important;
+	letter-spacing:.07em !important;
+	background: #405E83 !important;	
+	-webkit-transition:all 0.3s ease-in-out;
+	-moz-transition:all 0.3s ease-in-out;
+	-o-transition:all 0.3s ease-in-out;
+	-ms-transition:all 0.3s ease-in-out;
+	transition:all 0.3s ease-in-out;
+	filter:none !important;
+}
+
+.dropdown-menu .active > a {
+	color: #ffffff !important;
+	letter-spacing:.07em !important;
+  	background: #3c495a !important;
+	filter:none !important;
+}
+.dropdown-menu .active > a:hover {
+  	color: #ffffff !important;
+  	background: #405E83 !important;	
+}
+
+.collapse.in ul { 
+	margin-top:10px !important; 
+		
+}
+.collapse.in li a { 
+	padding:5px 10px;
+	color:#fff !important;
+}
+
+.navbar .btn-navbar {
+	padding:10px 15px;
+	margin-top: 18px;
+	background:#72c02c;
+	border:none !important;	
+}
+.navbar .btn-navbar:hover {
+	background:#5fb611;
+	color:#ffffff;
+}
+.navbar .btn-navbar span, 
+.navbar .btn-navbar:hover span {
+	background:#fff !important;
+	box-shadow:none !important;
+}
+.navbar .nav > li > .dropdown-menu:after { 
+	border-bottom-color:#585f69;
+	color:#ffffff;
+}
+.menu a.active {
+    background: #72c02c !important;
+    color: #fff !important;
+    border: #72c02c !important;
+    border-radius: 4px 4px 0 0;
+}
+/*Tabs*/
+.nav-tabs.tabs { 
+	background:none !important;
+	color:#ffffff;
+}
+.navbar-brand{
+	padding-top:21px;
+	color:#FF5733 !important;
+}
+@media only screen and (min-width: 320px) and (max-width: 992px)  {
+	.navbar-brand{
+		padding-top:16px;
+	}
+}

@@ -23,20 +23,18 @@
 	jobControllers.controller('ListController',
 		function($scope,$http, Data){
 			$scope.Data = Data;
-			$scope.get_position = function(position_code){
-				var pos = Data[1].positionOptions[position_code -1].names;
-				console.log(pos);
-				console.log(Data[0].positionOptions2[position_code].names);
-				return pos;
-			}
-			$scope.get_position = function(country_code){
-				return country_code;
-			}
 
 			var OnJobComplete =  function(response){
-				$scope.jobList = response.data['msg'];				
+				$scope.jobList = response.data['msg'];			
 				$scope.orderCriteria = 	"institution";
 				$scope.reverseOption = false;
+
+				for (var i = 0 ; i < $scope.jobList.length ; i++){
+					var num = $scope.jobList[i].position;
+					var accr = $scope.jobList[i].country;
+					$scope.jobList[i].position= Data.positionOptions[num].names;
+					$scope.jobList[i].country = Data.countryOptions[accr].name;
+				}
 			}
 
 			$scope.orderJobList = function(sortvariable){
@@ -64,9 +62,10 @@
 		function($scope,$http,$routeParams, Data){
 			$scope.Data = Data;
 			$scope.jobid = $routeParams.jobid;
-
+			
 			var OnInfoComplete = function(response){
-				$scope.jobInfo = response.data['msg'];				
+				$scope.jobInfo = response.data.msg;	
+				console.log($scope.jobInfo);		
 			}
 
 			var OnError =  function(reason){
@@ -78,17 +77,39 @@
 			
 		});
 
-	// jobControllers.controller('EditController', ['$scope', '$http','$routeParams',
-	// 	function($scope,$http,$routeParams){
-	// 		$scope.jobid = $routeParams.jobid;
+	jobControllers.controller('EditController',
+		function($scope,$http,$routeParams,Data){
+			$scope.jobid = $routeParams.jobid;
+			$scope.Data = Data;
+			var OnInfoComplete = function(response){
+				$scope.jobInfo = response.data.msg;	
+				console.log($scope.jobInfo);
+				
+				//$scope.jobInfo.position = Data.positionOptions[$scope.jobInfo.position].names;
+				// $scope.jobInfo.country = Data.countryOptions[$scope.jobInfo.country].name;
+				
+			}
+			var OnError =  function(reason){
+				$scope.error = reason;
+			}
 
+			$http.get("http://astrotalks.org/jobs/api/edit_job.php?jobid=" + $scope.jobid )
+				.then(OnInfoComplete,OnError);
 
-	// 		$http.get("http://astrotalks.org/jobs/api/edit_job.php?jobid=" + $scope.jobid )
-	// 		.success(function(data) {
- //      			$scope.jobInfo = data;
- //    		});
-	// 	}
-	// );
+			// $scope.editForm = function(){
+
+			// 	$http({
+			// 		method : 'POST',
+			// 		url : 'http://astrotalks.org/jobs/api/edit_job.php?jobid=' + $scope.jobid,
+			// 		data: $scope.jobInfo,
+			// 		headers : { 'Content-Type':'application/json' }
+			// 	})
+			// 	.success(function(data) {
+			// 		console.log("success");
+
+			// 	});
+			// }
+		});
 
 	jobControllers.factory('Data', 
 		function(){

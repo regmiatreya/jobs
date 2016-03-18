@@ -16,6 +16,10 @@ var jobApp = angular.module('jobApp', ['ngRoute','jobControllers']);
         templateUrl:'views/edit_job.html',
         controller: 'EditController',
       })
+      .when('/preview/:jobid', {
+        templateUrl: 'views/detail_job.html',
+        controller: 'DetailController',
+      })
       .when('/create', {
         templateUrl: 'views/create_job.html',
         controller: 'CreateController',

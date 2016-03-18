@@ -9,9 +9,7 @@ if(mysqli_connect_errno($conn)) {
 	exit();
 }
 $result = job_list($conn);
-// for ($i = 0 ; $i < count($result); $i++){
-// 	$result[$i]['position']= job_positions($result[$i]['position']);
-// }
+
 if (count($result) < 1) {
 	$msg = "job_list_empty_error";
 	json_print($msg, 'error');

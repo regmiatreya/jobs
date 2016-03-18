@@ -7,16 +7,6 @@ function connect_db() {
 function sanitize_fieldname($conndb, $fieldname) {
   return trim((mysqli_real_escape_string($conndb, $fieldname)));
 }
-// function job_positions($x){
-// 	$position[1] = "Faculty/Scientific Staff";
-// 	$position[2] = "Graduate";
-// 	$position[3] = "PostDoc and Fellowship";
-// 	$position[4] = "Software and Engineering";
-// 	$position[5] = "Management";
-// 	$position[6] = "Private Companies";
-// 	$position[7] = "Others";
-// 	return $position[$x];
-// }
 function extract_job($conndb,$newval) {
 	$job_info = array("title","email","institution","position","country","city","end_date","description");
 	for( $x = 0; $x < count($job_info) ; $x++) {  
@@ -29,6 +19,13 @@ function json_print($msg, $status){
 	$response['msg'] = $msg;
 	print json_encode($response);
 	exit();
+}
+function create_unique_key(){
+	return (md5(uniqid(rand(), true)) );
+}
+function job_edit_link($editkey){
+	$url = WEB_ROOT . "jobs/app/#/edit/edit_job.html/key=" . urlencode($editkey);
+	return $url;
 }
 
 /*   Database Functions   */
@@ -60,5 +57,17 @@ function job_details($conn, $jobid){
 	$sql = "SELECT * FROM jobpost WHERE jobid='$jobid' LIMIT 1";
 	return (mysqli_fetch_assoc(mysqli_query($conn, $sql)));
 }
+function queue_job_email($conn, $user_email, $email_body) {
+	$html_body = sanitize_fieldname($conn, $email_body['html_body']);
+	$text_body = sanitize_fieldname($conn,$email_body['text_body']);
+	$subject = sanitize_fieldname($conn,$email_body['subject']);
+	$sql = "INSERT INTO email_store (email,html_body,text_body,subject) VALUES('$user_email','$html_body','$text_body','$subject')";
+	return mysqli_query($conn,$sql);
+}
+
+
+
+
+
 
 ?>

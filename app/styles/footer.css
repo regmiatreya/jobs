@@ -1,0 +1,68 @@
+/*footer css file */
+/********** footer new******/
+.footer {
+margin-top:40px;
+padding:20px 10px;
+letter-spacing:.07em !important;
+font-family:"Coustard";
+background:#1F3043 ;
+color:#fff;
+
+} 
+.footer h1, 
+.footer h2, 
+.footer h3, 
+.footer h4, 
+.footer h5 {
+	text-shadow:none;
+	font-weight:normal !important; 
+	font-family:"Coustard";
+} 
+.footer p,
+.footer a {
+	font-size:16px;
+	text-decoration:none;
+} 
+.footer p {
+	color:#fff;
+} 
+.footer a {
+	color: #F5F1F1;
+}
+.footer a:hover {
+	color:#5cb85c;
+	text-decoration:none;
+    -webkit-transition:all 0.4s ease-in-out;
+    -moz-transition:all 0.4s ease-in-out;
+    -o-transition:all 0.4s ease-in-out;
+    transition:all 0.4s ease-in-out;
+}
+.footer h4, 
+.footer h3 {
+	color:#fff;
+	background:none;
+	text-shadow:none;
+}
+.copyright {
+	font-size:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	background:#0B243B;
+	border-top:solid 1px #777;	
+}
+.copyright p {
+	color:#dadada;
+	font-size:12px;
+}
+.copyright a {
+	margin:0 5px;
+	color:#72c02c;
+}
+.copyright a:hover {
+	color:#a8f85f;
+    -webkit-transition:all 0.4s ease-in-out;
+    -moz-transition:all 0.4s ease-in-out;
+    -o-transition:all 0.4s ease-in-out;
+    transition:all 0.4s ease-in-out;
+}
+
