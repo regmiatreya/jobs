@@ -1,4 +1,5 @@
 
+"use strict";
 var jobApp = angular.module('jobApp', ['ngRoute','jobControllers']);
 
   jobApp.config(function ($routeProvider) {

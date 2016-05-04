@@ -1,4 +1,15 @@
 <div class="container">
+	<div ng-if="jobMessage! =='success'">
+		<div class="alert alert-danger verticalspace" >
+			<p>{{jobMessage}}</p>
+		</div>
+	</div>
+	<div ng-else="jobMessage ==='success'">
+		<div class="alert alert-success verticalspace" >
+			<p>{{jobMessage}}</p>
+		</div>
+	</div>
+	
 	<h3 class="main-title text-center verticalspace">You can list the jobs and sort jobs by any category</h3>
 	<div class="search-btn">
 		<label>Search: <input ng-model="search.$"></label>

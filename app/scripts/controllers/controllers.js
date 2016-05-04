@@ -25,7 +25,8 @@
 			$scope.Data = Data;
 
 			var OnJobComplete =  function(response){
-				$scope.jobList = response.data['msg'];			
+				$scope.jobList = response.data['msg'];
+				$scope.jobMessage = response.data['status'];
 				$scope.orderCriteria = 	"institution";
 				$scope.reverseOption = false;
 
@@ -51,7 +52,7 @@
 			} 
 
 			var OnError =  function(reason){
-				$scope.error = reason;
+				$scope.error = reason.data;
 			}
 
 			$http.get("http://astrotalks.org/jobs/api/list_job.php")

@@ -61,8 +61,8 @@ input{
 	position:relative;
 }
 .content {
-	padding:0px;
-	padding-bottom:150px;
+/*	padding:0;*/
+	padding-bottom: 100px;
 }
 
 .sortorder:after {
